@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <main>Next E-commerce 14</main>
+    <div>
+      <h1>Next E-commerce 14</h1>
+    </div>
   );
 }
