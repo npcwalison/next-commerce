@@ -11,13 +11,12 @@ type ProductImageProps = {
 
 
 const ProductImage = ({ product, fill }: ProductImageProps) => {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     
     return fill ? (
         <Image
             src={product.image}
-            width={400}
-            height={700}
+            fill
             alt={product.title}
             className={`object-cover ${
                 loading ? 'scale-110 blur-3xl grayscale' : 'scale-100 blur-0 grayscale-0'
