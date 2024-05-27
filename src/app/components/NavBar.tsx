@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 
 
@@ -10,6 +11,14 @@ const NavBar = () => {
             >
                 Next Store
             </Link>
+            <div className="flex items-center gap-8">
+                <SignedIn>
+                    Usuario Logado
+                </SignedIn>
+                <SignedOut>
+                    Fazer Login
+                </SignedOut>
+            </div>
         </nav>
     );
 };
