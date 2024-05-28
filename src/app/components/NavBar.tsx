@@ -1,6 +1,5 @@
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-
 
 const NavBar = () => {
     return (
@@ -13,15 +12,18 @@ const NavBar = () => {
             </Link>
             <div className="flex items-center gap-8">
                 <SignedIn>
-                    Usuario Logado
+                    <UserButton />
                 </SignedIn>
                 <SignedOut>
-                    Fazer Login
+                    <SignInButton mode="modal">
+                        <button className="border rounded-md border-gray-400 px-3 py-2">
+                            Fazer Login
+                        </button>
+                    </SignInButton>
                 </SignedOut>
             </div>
         </nav>
     );
 };
-
 
 export default NavBar;
